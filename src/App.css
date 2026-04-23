@@ -1,4 +1,4 @@
-/* Reset & Base - HCNY Navy Peony Theme */
+/* Reset & Base - Navy Peony Theme */
 :root {
     --navy-peony: #223a5e;
     --admiral-blue: #003366;
@@ -32,7 +32,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(22, 33, 48, 0.95); /* Slightly transparent shadow navy */
+    background: rgba(22, 33, 48, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid var(--border-slate);
@@ -90,18 +90,80 @@ body {
     color: var(--highlight-blue);
 }
 
-/* Hero Section - Clean Corporate Look */
+/* Hero Section with Slideshow */
 .hero {
-    background: linear-gradient(135deg, var(--shadow-navy) 0%, #1a273a 50%, var(--shadow-navy) 100%);
+    position: relative;
+    background: transparent;
     color: #ffffff;
     padding: 10rem 2rem 6rem;
     text-align: center;
     margin-top: 60px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slideshow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slideshow-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(22, 33, 48, 0.7);
+    z-index: 2;
 }
 
 .hero-content {
+    position: relative;
+    z-index: 3;
     max-width: 800px;
     margin: 0 auto;
+}
+
+.hero-logo-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--highlight-blue);
+    box-shadow: 0 0 20px rgba(123, 158, 194, 0.3);
 }
 
 .hero-kusom {
@@ -125,7 +187,6 @@ body {
     color: var(--text-silver);
     margin-bottom: 1.5rem;
     font-weight: 400;
-    letter-spacing: -0.2px;
 }
 
 .hero-description {
@@ -136,63 +197,68 @@ body {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-    font-weight: 400;
 }
 
-/* Button - Admiral Blue */
-.cta-button {
-    background-color: var(--admiral-blue);
-    color: #ffffff;
-    border: 1px solid var(--navy-peony);
-    padding: 12px 24px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+.slide-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    z-index: 3;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    display: inline-block;
+    transition: all 0.3s ease;
+    padding: 0;
 }
 
-.cta-button:hover {
-    background-color: var(--navy-peony);
+.dot.active {
+    background: var(--highlight-blue);
+    width: 24px;
+    border-radius: 5px;
 }
 
-/* Stats Section */
-.stats {
+/* White Stats Section - Only on Home Page */
+.stats-white {
     display: flex;
     justify-content: center;
-    gap: 4rem;
+    gap: 5rem;
     padding: 4rem 2rem;
-    background: rgba(34, 58, 94, 0.05);
-    border-top: 1px solid var(--border-slate);
-    border-bottom: 1px solid var(--border-slate);
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
-.stat {
+.stats-white .stat {
     text-align: center;
 }
 
-.stat h3 {
-    font-size: 2.2rem;
+.stats-white .stat h3 {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #1a2332;
     margin-bottom: 0.5rem;
 }
 
-.stat p {
-    color: var(--highlight-blue);
-    font-weight: 500;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
+.stats-white .stat p {
+    color: #223a5e;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
 }
 
-/* Sections */
-.about, .teams, .leaders, .events, .contact {
+/* Other Pages - Navy Background */
+.about, .teams, .leaders, .events {
     padding: 5rem 0;
     background: var(--shadow-navy);
-    border-bottom: 1px solid var(--border-slate);
 }
 
 h2 {
@@ -203,7 +269,7 @@ h2 {
     font-weight: 600;
 }
 
-/* Cards - Glass Effect for Corporate Feel */
+/* Cards */
 .about-grid, .teams-grid, .leaders-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -211,9 +277,8 @@ h2 {
 }
 
 .team-card, .leader-card, .about-card, .member-card, .event-card {
-    background: rgba(34, 58, 94, 0.1);
+    background: rgba(34, 58, 94, 0.3);
     border: 1px solid var(--border-slate);
-    border-radius: 4px;
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
@@ -221,16 +286,8 @@ h2 {
 
 .team-card:hover, .leader-card:hover, .about-card:hover, .member-card:hover, .event-card:hover {
     border-color: var(--navy-peony);
-    background: rgba(34, 58, 94, 0.2);
+    background: rgba(34, 58, 94, 0.5);
     transform: translateY(-5px);
-}
-
-.team-card h3, .leader-card h3, .about-card h3 {
-    color: #ffffff;
-}
-
-.team-card p, .leader-card p, .about-card p {
-    color: var(--text-silver);
 }
 
 /* Team Sections */
@@ -253,35 +310,26 @@ h2 {
     gap: 1.5rem;
 }
 
-.member-card {
-    padding: 1.5rem;
-}
-
-.member-photo {
-    width: 100px;
-    height: 100px;
+.member-photo, .leader-photo {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     margin-bottom: 1rem;
     border: 2px solid var(--border-slate);
 }
 
-/* Specific fix for Srijan's photo */
-.member-photo.srijan-fix {
-    object-position: top center;
+.leader-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.member-card h4 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-    color: #ffffff;
-    word-wrap: break-word;
-}
-
-.member-role {
+.leader-card .role {
     color: var(--highlight-blue);
-    font-size: 0.7rem;
     font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
 }
 
 /* Events */
@@ -306,150 +354,6 @@ h2 {
     text-align: center;
     font-weight: 700;
     margin-right: 1.5rem;
-    border-radius: 4px;
-}
-
-.event-info h3 {
-    color: #ffffff;
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-}
-
-.event-info p {
-    color: var(--text-silver);
-    font-size: 0.85rem;
-    margin: 0;
-}
-
-/* Contact Page New Interface */
-.contact-new-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-info-card, .contact-form-card {
-    background: rgba(15, 23, 34, 0.6);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(123, 158, 194, 0.2);
-    border-radius: 16px;
-    padding: 2rem;
-    transition: all 0.3s ease;
-}
-
-.contact-info-card:hover, .contact-form-card:hover {
-    border-color: rgba(123, 158, 194, 0.5);
-    transform: translateY(-5px);
-}
-
-.contact-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.contact-info-card h3 {
-    color: #7b9ec2;
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.contact-info-card p {
-    color: #c5d2e3;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-}
-
-.social-section {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(123, 158, 194, 0.2);
-}
-
-.social-section h3 {
-    margin-bottom: 1rem;
-}
-
-.social-icons {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-.social-icons a {
-    color: #7b9ec2;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    background: rgba(123, 158, 194, 0.1);
-    border-radius: 8px;
-}
-
-.social-icons a:hover {
-    color: #ffffff;
-    background: #7b9ec2;
-    transform: translateY(-2px);
-}
-
-.contact-form-card h3 {
-    color: #ffffff;
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.contact-form-card input,
-.contact-form-card textarea {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    background: rgba(15, 23, 34, 0.7);
-    border: 1px solid rgba(123, 158, 194, 0.3);
-    color: #ffffff;
-    border-radius: 8px;
-    font-family: inherit;
-}
-
-.contact-form-card input:focus,
-.contact-form-card textarea:focus {
-    outline: none;
-    border-color: #7b9ec2;
-    background: rgba(15, 23, 34, 0.9);
-}
-
-.contact-form-card button {
-    width: 100%;
-    background: #7b9ec2;
-    color: #0f1722;
-    border: none;
-    padding: 0.8rem;
-    font-weight: 700;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
-}
-
-.contact-form-card button:hover {
-    background: #9bb8d8;
-    transform: translateY(-2px);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .contact-new-layout {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .contact-info-card, .contact-form-card {
-        padding: 1.5rem;
-    }
 }
 
 /* Footer */
@@ -462,39 +366,10 @@ h2 {
     border-top: 1px solid var(--border-slate);
 }
 
-/* Leaders Page Specific Fixes */
+/* Leaders Grid */
 .leaders-grid {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.leader-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.leader-photo {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 3px solid var(--border-slate);
-    border-radius: 0;
-}
-
-.leader-card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.25rem;
-}
-
-.leader-card .role {
-    color: var(--highlight-blue);
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    margin-bottom: 0.75rem;
 }
 
 .leader-card p:last-of-type {
@@ -502,12 +377,517 @@ h2 {
     font-size: 0.85rem;
     line-height: 1.4;
     margin-top: 0.5rem;
-    margin: 0;
     max-width: 100%;
     word-wrap: break-word;
 }
 
+/* About Page Specific Styles */
+.about-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    color: #c5d2e3;
+}
+
+.leadership-section {
+    margin: 4rem 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #7b9ec2;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.team-description {
+    color: #a8bbd1;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.teams-section {
+    margin-top: 3rem;
+}
+
+/* ============================================ */
+/* CONTACT PAGE - WHITE BACKGROUND, NAVY TEXT */
+/* ============================================ */
+
+.contact-page-wrapper {
+    background: #ffffff;
+    min-height: calc(100vh - 200px);
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+.contact-new-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* White cards with navy blue text */
+.contact-info-card, .contact-form-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info-card:hover, .contact-form-card:hover {
+    border-color: #223a5e;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Navy blue text for white cards */
+.contact-info-card h3 {
+    color: #1a2332;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.contact-info-card p {
+    color: #333333;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+/* Social section on white background */
+.social-section {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.social-section h3 {
+    color: #1a2332;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    color: #1a2332;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+    background: #223a5e;
+    transform: translateY(-2px);
+}
+
+/* Form on white background */
+.contact-form-card h3 {
+    color: #1a2332;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #1a2332;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    outline: none;
+    border-color: #223a5e;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-card input::placeholder,
+.contact-form-card textarea::placeholder {
+    color: #888888;
+}
+
+.contact-form-card button {
+    width: 100%;
+    background: #1a2332;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.contact-form-card button:hover {
+    background: #223a5e;
+    transform: translateY(-2px);
+}
+
+/* Get in Touch heading - Navy blue to match theme */
+.contact-page-wrapper .contact h2 {
+    color: #1a2332;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Contact Page Responsive */
+@media (max-width: 768px) {
+    .contact-new-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .contact-info-card, .contact-form-card {
+        padding: 1.5rem;
+    }
+}
+
+/* ============================================ */
+/* ABOUT PAGE - WHITE BACKGROUND, NAVY TEXT */
+/* ============================================ */
+
+.about-page-wrapper {
+    background: #ffffff;
+    min-height: calc(100vh - 200px);
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+.about-page-wrapper .about-intro {
+    color: #1a2332;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+}
+
+.about-page-wrapper h2 {
+    color: #1a2332;
+}
+
+.about-page-wrapper .about-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.about-page-wrapper .about-card:hover {
+    border-color: #223a5e;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.about-page-wrapper .about-card h3 {
+    color: #1a2332;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.about-page-wrapper .about-card p {
+    color: #333333;
+}
+
+/* Leadership Section on About Page */
+.about-page-wrapper .leadership-section {
+    margin: 4rem 0;
+}
+
+.about-page-wrapper .section-subtitle {
+    color: #7b9ec2;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.about-page-wrapper .leader-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.about-page-wrapper .leader-card:hover {
+    border-color: #223a5e;
+    transform: translateY(-5px);
+}
+
+.about-page-wrapper .leader-card h3 {
+    color: #1a2332;
+    margin-top: 0.5rem;
+}
+
+.about-page-wrapper .leader-card .role {
+    color: #7b9ec2;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.75rem;
+}
+
+.about-page-wrapper .leader-card p:last-of-type {
+    color: #333333;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Teams Section on About Page */
+.about-page-wrapper .teams-section {
+    margin-top: 3rem;
+}
+
+.about-page-wrapper .team-category {
+    color: #1a2332;
+    border-left: 3px solid #223a5e;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+}
+
+.about-page-wrapper .team-description {
+    color: #666666;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+}
+
+.about-page-wrapper .member-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-page-wrapper .member-card:hover {
+    border-color: #223a5e;
+    transform: translateY(-3px);
+}
+
+.about-page-wrapper .member-card h4 {
+    color: #1a2332;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.about-page-wrapper .member-role {
+    color: #7b9ec2;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.about-page-wrapper .member-photo {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+}
+
+/* ============================================ */
+/* EVENTS PAGE - COMPLETE WHITE BACKGROUND */
+/* ============================================ */
+
+.events-page-wrapper {
+    background: #ffffff !important;
+    min-height: calc(100vh - 200px);
+    margin-top: -80px;
+    padding-top: 80px;
+}
+
+.events-page-wrapper .events {
+    background: transparent !important;
+    padding: 0;
+}
+
+.events-page-wrapper h2 {
+    color: #1a2332 !important;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    background: transparent;
+}
+
+.events-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.events-page-wrapper .event-card {
+    background: #ffffff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.events-page-wrapper .event-card:hover {
+    border-color: #223a5e !important;
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.events-page-wrapper .event-date {
+    background: #1a2332 !important;
+    color: #ffffff !important;
+    padding: 0.75rem 1rem;
+    min-width: 90px;
+    text-align: center;
+    font-weight: 700;
+    margin-right: 1.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.events-page-wrapper .event-info h3 {
+    color: #1a2332 !important;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    background: transparent;
+}
+
+.events-page-wrapper .event-info p {
+    color: #666666 !important;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.4;
+    background: transparent;
+}
+
+/* Override any conflicting styles */
+.events-page-wrapper .container,
+.events-page-wrapper section {
+    background: transparent;
+}
+
 /* Responsive */
+@media (max-width: 768px) {
+    .events-page-wrapper .event-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+    }
+    
+    .events-page-wrapper .event-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+    
+    .events-page-wrapper .event-info h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .events-page-wrapper .event-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+    }
+    
+    .events-page-wrapper .event-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+    
+    .events-page-wrapper .event-info h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .events-page-wrapper .event-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+    }
+    
+    .events-page-wrapper .event-date {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+    
+    .events-page-wrapper .event-info h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Explore Events Button - Matching Send Message button */
+.explore-events-btn {
+    width: auto;
+    background: #1a2332;
+    color: #ffffff;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+}
+
+.explore-events-btn:hover {
+    background: #223a5e;
+    transform: translateY(-2px);
+}
+
+/* Global Responsive */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -521,13 +901,9 @@ h2 {
         font-size: 2rem;
     }
     
-    .stats {
+    .stats-white {
         flex-direction: column;
         gap: 2rem;
-    }
-    
-    .contact-container {
-        grid-template-columns: 1fr;
     }
     
     .leaders-grid {
@@ -561,385 +937,4 @@ h2 {
     .member-card h4 {
         font-size: 0.8rem;
     }
-}
-/* Slideshow Container - Full Width Behind Content */
-.slideshow-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: 0;
-}
-
-.slide.active {
-    opacity: 1;
-    z-index: 1;
-}
-
-/* Dark overlay to make text readable */
-.slideshow-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(22, 33, 48, 0.7);
-    z-index: 2;
-}
-
-/* Update hero section to handle absolute positioning */
-.hero {
-    position: relative;
-    background: transparent;
-    color: #ffffff;
-    padding: 10rem 2rem 6rem;
-    text-align: center;
-    margin-top: 60px;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 3;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Slide Navigation Dots */
-.slide-dots {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 12px;
-    z-index: 3;
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
-}
-
-.dot:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.2);
-}
-
-.dot.active {
-    background: #7b9ec2;
-    width: 24px;
-    border-radius: 5px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .hero {
-        min-height: 500px;
-        padding: 8rem 2rem 4rem;
-    }
-    
-    .slide-dots {
-        bottom: 20px;
-        gap: 8px;
-    }
-    
-    .dot {
-        width: 8px;
-        height: 8px;
-    }
-    
-    .dot.active {
-        width: 20px;
-    }
-}
-
-/* White Stats Section */
-.stats-white {
-    display: flex;
-    justify-content: center;
-    gap: 5rem;
-    padding: 4rem 2rem;
-    background: #ffffff;
-    border-top: 1px solid #e0e0e0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.stats-white .stat {
-    text-align: center;
-}
-
-.stats-white .stat h3 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #1a2332;
-    margin-bottom: 0.5rem;
-}
-
-.stats-white .stat p {
-    color: #223a5e;
-    font-weight: 600;
-    font-size: 0.8rem;
-    letter-spacing: 2px;
-}
-
-/* Keep all other sections with navy background */
-.about, .teams, .leaders, .events, .contact {
-    background: #1a2332;
-}
-
-/* Adjust card backgrounds for better contrast on navy */
-.team-card, .leader-card, .about-card, .member-card, .event-card {
-    background: rgba(34, 58, 94, 0.3);
-    border: 1px solid #2a3548;
-}
-
-.team-card:hover, .leader-card:hover, .about-card:hover, .member-card:hover, .event-card:hover {
-    background: rgba(34, 58, 94, 0.5);
-}
-
-/* Footer stays navy */
-.footer {
-    background: #0a0f18;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .stats-white {
-        flex-direction: column;
-        gap: 2rem;
-        padding: 2rem;
-    }
-    
-    .stats-white .stat h3 {
-        font-size: 2rem;
-    }
-}
-
-/* Hero Circular Logo */
-.hero-logo-container {
-    margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-}
-
-.hero-logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #7b9ec2;
-    box-shadow: 0 0 20px rgba(123, 158, 194, 0.3);
-}
-
-/* Override backgrounds to match Home page */
-.about, .teams, .leaders, .events, .contact {
-    background: transparent;
-    padding: 5rem 0;
-}
-
-/* Make cards have slight transparency instead of solid blue */
-.team-card, .leader-card, .about-card, .member-card, .event-card {
-    background: rgba(34, 58, 94, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.team-card:hover, .leader-card:hover, .about-card:hover, .member-card:hover, .event-card:hover {
-    background: rgba(34, 58, 94, 0.3);
-}
-
-/* Ensure body background is consistent */
-body {
-    background: #1a2332;
-}
-
-/* New Global Background - Clean Modern Gradient */
-body {
-    background: linear-gradient(135deg, #0f1722 0%, #1a2332 50%, #0f1722 100%);
-    min-height: 100vh;
-}
-
-/* Subtle dot pattern overlay for texture */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(123, 158, 194, 0.1) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-}
-
-/* Ensure all content appears above the pattern */
-.container, .hero, .stats-white, footer {
-    position: relative;
-    z-index: 1;
-}
-
-/* Update card backgrounds to be slightly transparent with blur */
-.team-card, .leader-card, .about-card, .member-card, .event-card {
-    background: rgba(15, 23, 34, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(123, 158, 194, 0.2);
-}
-
-.team-card:hover, .leader-card:hover, .about-card:hover, .member-card:hover, .event-card:hover {
-    background: rgba(15, 23, 34, 0.85);
-    border-color: rgba(123, 158, 194, 0.4);
-}
-
-/* Contact form styling to match */
-.contact-form input, .contact-form textarea {
-    background: rgba(15, 23, 34, 0.7);
-    border: 1px solid rgba(123, 158, 194, 0.3);
-    color: #ffffff;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: #7b9ec2;
-    background: rgba(15, 23, 34, 0.9);
-}
-
-.contact-info {
-    background: rgba(15, 23, 34, 0.5);
-    border: 1px solid rgba(123, 158, 194, 0.2);
-}
-
-/* Social links styling */
-.social-links a {
-    color: #7b9ec2;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: #9bb8d8;
-}
-
-/* Stats section - keep white but with slight transparency */
-.stats-white {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(5px);
-}
-
-/* Footer styling */
-.footer {
-    background: rgba(10, 15, 24, 0.9);
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(123, 158, 194, 0.2);
-}
-
-/* Updated Contact Page Layout */
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.contact-info h3, .contact-form h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    color: #ffffff;
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-    line-height: 1.6;
-    color: #c5d2e3;
-}
-
-.social-links p {
-    margin-top: 1rem;
-    padding-top: 0.5rem;
-    border-top: 1px solid rgba(123, 158, 194, 0.2);
-}
-
-.social-links strong {
-    color: #7b9ec2;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 0.8rem 1rem;
-    border-radius: 4px;
-}
-
-.contact-form button {
-    margin-top: 0.5rem;
-}
-
-@media (max-width: 768px) {
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-
-/* About Page Specific Styles */
-.about-intro {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    font-size: 1.1rem;
-    color: #c5d2e3;
-}
-
-.leadership-section {
-    margin: 4rem 0;
-}
-
-.section-subtitle {
-    text-align: center;
-    color: #7b9ec2;
-    margin-bottom: 2rem;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.team-description {
-    color: #a8bbd1;
-    margin-bottom: 1rem;
-    font-size: 0.85rem;
-}
-
-.teams-section {
-    margin-top: 3rem;
 }

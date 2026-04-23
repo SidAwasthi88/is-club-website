@@ -46,7 +46,7 @@ function Home() {
                         We are a community of innovators, designers, developers, and thinkers who believe that information 
                         systems are instruments of change.
                     </p>
-                    <button className="cta-button" onClick={() => window.location.href='/events'}>
+                    <button className="explore-events-btn" onClick={() => window.location.href='/events'}>
                         EXPLORE EVENTS →
                     </button>
                 </div>

@@ -1,5 +1,6 @@
 function About() {
     return (
+        <div className="about-page-wrapper">
         <div className="container">
             {/* About Section */}
             <section className="about-section">
@@ -192,6 +193,7 @@ function About() {
                     </div>
                 </div>
             </section>
+        </div>
         </div>
     );
 }
