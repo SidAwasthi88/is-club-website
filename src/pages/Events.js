@@ -20,10 +20,10 @@ function Events() {
                             </div>
                         </div>
                         <div className="event-card">
-                            <div className="event-date">June 5</div>
+                            <div className="event-date">June 20</div>
                             <div className="event-info">
-                                <h3>Tech Talk: AI in Business</h3>
-                                <p>Guest lecture from industry expert</p>
+                                <h3>Digital आवाज</h3>
+                                <p>Code. Create. Contribute to Women’s Safety.</p>
                             </div>
                         </div>
                     </div>
