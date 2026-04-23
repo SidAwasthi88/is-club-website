@@ -33,7 +33,7 @@ function Home() {
                     <div className="slideshow-overlay"></div>
                 </div>
                 
-                <div className="hero-content">
+                <div className="hero-content" style={{ paddingTop: '60px' }}>
                     <div className="hero-logo-container">
                         <img src="/Images/club_logo.jpeg" alt="IS Club Logo" className="hero-logo" />
                     </div>

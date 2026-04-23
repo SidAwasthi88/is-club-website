@@ -24,7 +24,7 @@ function App() {
     return (
         <div>
             <NavBar />
-            <div style={{ marginTop: '80px' }}>
+            <div style={{ marginTop: '0px' }}>
                 <AnimatePresence mode="wait">
                     <Routes location={location} key={location.pathname}>
                         <Route path="/" element={
