@@ -1,3 +1,5 @@
+import { FaInstagram, FaLinkedin, FaFacebook } from 'react-icons/fa';
+
 function Contact() {
     return (
         <div className="contact-page-wrapper">
@@ -22,9 +24,15 @@ function Contact() {
                             <div className="social-section">
                                 <h3>Follow Us</h3>
                                 <div className="social-icons">
-                                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-                                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
+                                    <a href="https://www.instagram.com/kusomisc/" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                                        <FaInstagram size={24} /> Instagram
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/information-systems-club-kusom/" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                                        <FaLinkedin size={24} /> LinkedIn
+                                    </a>
+                                    <a href="https://www.facebook.com/kusomISC" target="_blank" rel="noopener noreferrer" className="social-icon-link">
+                                        <FaFacebook size={24} /> Facebook
+                                    </a>
                                 </div>
                             </div>
                         </div>
