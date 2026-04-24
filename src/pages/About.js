@@ -56,7 +56,7 @@ function About() {
                     {/* Leader 3 - Aarika (Photo Left, Text Right) */}
                     <div className="leader-row leader-left">
                         <div className="leader-photo-container">
-                            <img src="/Images/aarika.jpg" alt="Aarika Maharjan" className="leader-photo-large" />
+                            <img src="/Images/aarika.JPG" alt="Aarika Maharjan" className="leader-photo-large" style={{ objectPosition: '50% 30%' }}/>
                         </div>
                         <div className="leader-info">
                             <h3>Aarika Maharjan</h3>
@@ -166,7 +166,7 @@ function About() {
                         <p className="team-description">Design, graphics & visual content</p>
                         <div className="team-members-grid">
                             <div className="member-card">
-                                <img src="/Images/archie.jpg" alt="Archie Shrestha" className="member-photo" />
+                                <img src="/Images/archie.jpeg" alt="Archie Shrestha" className="member-photo" />
                                 <h4>Archie Shrestha</h4>
                                 <p className="member-role">Lead</p>
                             </div>
