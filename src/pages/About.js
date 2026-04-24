@@ -100,7 +100,7 @@ function About() {
                         <p className="team-description">Promotions & social media</p>
                         <div className="team-members-grid">
                             <div className="member-card">
-                                <img src="/Images/jelshi.jpg" alt="Jelshi Rai" className="member-photo" />
+                                <img src="/Images/jelshi.jpg" alt="Jelshi Rai" className="member-photo" style={{ objectPosition: 'bottom center' }} />
                                 <h4>Jelshi Rai</h4>
                                 <p className="member-role">Lead</p>
                             </div>
@@ -148,7 +148,7 @@ function About() {
                                 <p className="member-role">Member</p>
                             </div>
                             <div className="member-card">
-                                <img src="/Images/samrat.jpg" alt="Samrat Karki" className="member-photo" />
+                                <img src="/Images/samrat.jpg" alt="Samrat Karki" className="member-photo" style={{ objectPosition: 'bottom center' }}/>
                                 <h4>Samrat Karki</h4>
                                 <p className="member-role">Member</p>
                             </div>
@@ -171,7 +171,7 @@ function About() {
                                 <p className="member-role">Lead</p>
                             </div>
                             <div className="member-card">
-                                <img src="/Images/anupa.png" alt="Anupa Pudasaini" className="member-photo" />
+                                <img src="/Images/anupa.png" alt="Anupa Pudasaini" className="member-photo" style={{ objectPosition: '50% 30%' }}/>
                                 <h4>Anupa Pudasaini</h4>
                                 <p className="member-role">Co-Lead</p>
                             </div>
@@ -181,7 +181,7 @@ function About() {
                                 <p className="member-role">Member</p>
                             </div>
                             <div className="member-card">
-                                <img src="/Images/siran.jpg" alt="Siran Kafle" className="member-photo" />
+                                <img src="/Images/siran.jpg" alt="Siran Kafle" className="member-photo" style={{ objectPosition: '50% 50%' }}/>
                                 <h4>Siran Kafle</h4>
                                 <p className="member-role">Member</p>
                             </div>
@@ -204,7 +204,7 @@ function About() {
                         <p className="team-description">Planning & executing club events</p>
                         <div className="team-members-grid">
                             <div className="member-card">
-                                <img src="/Images/aayush.jpeg" alt="Aayush Pradhan" className="member-photo" />
+                                <img src="/Images/aayush.jpeg" alt="Aayush Pradhan" className="member-photo" style={{ objectPosition: '50% 90%' }}/>
                                 <h4>Aayush Pradhan</h4>
                                 <p className="member-role">Member</p>
                             </div>
