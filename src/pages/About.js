@@ -80,7 +80,7 @@ function About() {
                     {/* Leader 5 - Bibhushree (Photo Left, Text Right) */}
                     <div className="leader-row leader-left">
                         <div className="leader-photo-container">
-                            <img src="/Images/bibhushree.jpg" alt="Bibhushree Malla" className="leader-photo-large" />
+                            <img src="/Images/bibhushree.jpeg" alt="Bibhushree Malla" className="leader-photo-large" />
                         </div>
                         <div className="leader-info">
                             <h3>Bibhushree Malla</h3>
