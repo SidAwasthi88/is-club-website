@@ -141,13 +141,6 @@ function NavBar() {
             </nav>
 
             <div className={`mobile-nav ${menuOpen ? 'open' : ''}`}>
-                <button 
-                    className="mobile-close-btn" 
-                    onClick={closeMenu}
-                    aria-label="Close menu"
-                >
-                    ✕
-                </button>
                 <Link to="/"        className={location.pathname === '/'        ? 'active' : ''} onClick={closeMenu}>Home</Link>
                 <Link to="/about"   className={location.pathname === '/about'   ? 'active' : ''} onClick={closeMenu}>About Us</Link>
                 <Link to="/events"  className={location.pathname === '/events'  ? 'active' : ''} onClick={closeMenu}>Events</Link>
