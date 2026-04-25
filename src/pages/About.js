@@ -24,12 +24,12 @@ function About() {
                     </div>
                 </section>
 
-                {/* Leadership Section - Executive Board with Alternating Layout */}
+                {/* Leadership Section - Executive Board*/}
                 <section className="leadership-section">
                     <h2>Leadership</h2>
                     <p className="section-subtitle">Executive Board — 2026</p>
                     
-                    {/* Leader 1 - Serisha (Photo Left, Text Right) */}
+                    {/* Leader 1 - Serisha */}
                     <div className="leader-row leader-left">
                         <div className="leader-photo-container">
                             <img src="/Images/serisha.jpeg" alt="Serisha Awale" className="leader-photo-large" />
@@ -41,19 +41,20 @@ function About() {
                         </div>
                     </div>
 
-                    {/* Leader 2 - Luniva (Photo Right, Text Left) */}
-                    <div className="leader-row leader-right">
+                    {/* Leader 2 - Luniva */}
+                    <div className="leader-row leader-left">
+                        <div className="leader-photo-container">
+                            <img src="/Images/luniva.jpg" alt="Luniva Rajbhandari" className="leader-photo-large" />
+                        </div>
                         <div className="leader-info">
                             <h3>Luniva Rajbhandari</h3>
                             <p className="role">Vice President</p>
                             <p>Hi, I'm Luniva. As Vice President, I work closely with all four teams to ensure our initiatives run smoothly and our members feel supported. I'm passionate about collaboration and creating spaces where every voice is heard.</p>
                         </div>
-                        <div className="leader-photo-container">
-                            <img src="/Images/luniva.jpg" alt="Luniva Rajbhandari" className="leader-photo-large" />
-                        </div>
+
                     </div>
 
-                    {/* Leader 3 - Aarika (Photo Left, Text Right) */}
+                    {/* Leader 3 - Aarika */}
                     <div className="leader-row leader-left">
                         <div className="leader-photo-container">
                             <img src="/Images/aarika.JPG" alt="Aarika Maharjan" className="leader-photo-large" style={{ objectPosition: '50% 30%' }}/>
@@ -65,19 +66,19 @@ function About() {
                         </div>
                     </div>
 
-                    {/* Leader 4 - Surya (Photo Right, Text Left) */}
-                    <div className="leader-row leader-right">
+                    {/* Leader 4 - Surya */}
+                    <div className="leader-row leader-left">
+                        <div className="leader-photo-container">
+                            <img src="/Images/surya.JPG" alt="Surya Dahal" className="leader-photo-large" />
+                        </div>
                         <div className="leader-info">
                             <h3>Surya Dahal</h3>
                             <p className="role">Treasurer</p>
                             <p>Hi, I'm Surya. As Treasurer, I manage the club's finances and ensure every initiative is resourced for success. I'm committed to transparency and making sure our budget reflects our values.</p>
                         </div>
-                        <div className="leader-photo-container">
-                            <img src="/Images/surya.JPG" alt="Surya Dahal" className="leader-photo-large" />
-                        </div>
                     </div>
 
-                    {/* Leader 5 - Bibhushree (Photo Left, Text Right) */}
+                    {/* Leader 5 - Bibhushree */}
                     <div className="leader-row leader-left">
                         <div className="leader-photo-container">
                             <img src="/Images/bibhushree.jpeg" alt="Bibhushree Malla" className="leader-photo-large" />
@@ -90,42 +91,9 @@ function About() {
                     </div>
                 </section>
 
-                {/* Teams Section - New Order: Marketing, Technical, Creative, Events */}
+                {/* Teams Section */}
                 <section className="teams-section">
                     <h2>Our Teams — 2026</h2>
-                    
-                    {/* Marketing Team - First */}
-                    <div className="team-section">
-                        <h3 className="team-category">📢 Marketing Team</h3>
-                        <p className="team-description">Promotions & social media</p>
-                        <div className="team-members-grid">
-                            <div className="member-card">
-                                <img src="/Images/jelshi.jpg" alt="Jelshi Rai" className="member-photo" style={{ objectPosition: 'bottom center' }} />
-                                <h4>Jelshi Rai</h4>
-                                <p className="member-role">Lead</p>
-                            </div>
-                            <div className="member-card">
-                                <img src="/Images/sisham.jpg" alt="Sisham Ghimire" className="member-photo" />
-                                <h4>Sisham Ghimire</h4>
-                                <p className="member-role">Co-Lead</p>
-                            </div>
-                            <div className="member-card">
-                                <img src="/Images/nikita.jpg" alt="Nikita Shrestha" className="member-photo" />
-                                <h4>Nikita Shrestha</h4>
-                                <p className="member-role">Member</p>
-                            </div>
-                            <div className="member-card">
-                                <img src="/Images/sekha.jpg" alt="Sekha Shrestha" className="member-photo" />
-                                <h4>Sekha Shrestha</h4>
-                                <p className="member-role">Member</p>
-                            </div>
-                            <div className="member-card">
-                                <img src="/Images/krisha.jpg" alt="Krisha Manandhar" className="member-photo" />
-                                <h4>Krisha Manandhar</h4>
-                                <p className="member-role">Member</p>
-                            </div>
-                        </div>
-                    </div>
 
                     {/* Technical Team - Second */}
                     <div className="team-section">
@@ -160,6 +128,38 @@ function About() {
                         </div>
                     </div>
 
+                    {/* Marketing Team - First */}
+                    <div className="team-section">
+                        <h3 className="team-category">📢 Marketing Team</h3>
+                        <p className="team-description">Promotions & social media</p>
+                        <div className="team-members-grid">
+                            <div className="member-card">
+                                <img src="/Images/jelshi.jpg" alt="Jelshi Rai" className="member-photo" style={{ objectPosition: 'bottom center' }} />
+                                <h4>Jelshi Rai</h4>
+                                <p className="member-role">Lead</p>
+                            </div>
+                            <div className="member-card">
+                                <img src="/Images/sisham.jpg" alt="Sisham Ghimire" className="member-photo" />
+                                <h4>Sisham Ghimire</h4>
+                                <p className="member-role">Co-Lead</p>
+                            </div>
+                            <div className="member-card">
+                                <img src="/Images/nikita.jpg" alt="Nikita Shrestha" className="member-photo" />
+                                <h4>Nikita Shrestha</h4>
+                                <p className="member-role">Member</p>
+                            </div>
+                            <div className="member-card">
+                                <img src="/Images/sekha.jpg" alt="Sekha Shrestha" className="member-photo" />
+                                <h4>Sekha Shrestha</h4>
+                                <p className="member-role">Member</p>
+                            </div>
+                            <div className="member-card">
+                                <img src="/Images/krisha.jpg" alt="Krisha Manandhar" className="member-photo" />
+                                <h4>Krisha Manandhar</h4>
+                                <p className="member-role">Member</p>
+                            </div>
+                        </div>
+                    </div>
                     {/* Creative Team - Third */}
                     <div className="team-section">
                         <h3 className="team-category">🎨 Creative Team</h3>
