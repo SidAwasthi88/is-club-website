@@ -206,13 +206,16 @@ body {
 .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* Mobile Drawer */
+/* Mobile Drawer - Bigger like HCNY */
 .mobile-nav {
     display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100vh;
-    background: rgba(22, 33, 48, 0.99);
-    backdrop-filter: blur(20px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(22, 33, 48, 0.98);
+    backdrop-filter: blur(24px);
     z-index: 999;
     flex-direction: column;
     align-items: center;
@@ -220,7 +223,7 @@ body {
     gap: 2.5rem;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.4s ease;
 }
 
 .mobile-nav.open {
@@ -231,16 +234,37 @@ body {
 
 .mobile-nav a {
     font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 600;
     color: var(--text-silver);
     text-decoration: none;
     transition: color 0.2s ease;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
+    padding: 0.5rem 0;
 }
 
 .mobile-nav a:hover,
-.mobile-nav a.active { color: var(--highlight-blue); }
+.mobile-nav a.active {
+    color: var(--highlight-blue);
+    transform: scale(1.05);
+}
+
+.mobile-close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: none;
+    border: none;
+    color: var(--text-silver);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.mobile-close-btn:hover {
+    color: var(--highlight-blue);
+    transform: rotate(90deg);
+}
 
 /* ============================================ */
 /* HERO */
@@ -992,14 +1016,36 @@ body {
 
     /* Bigger navbar on mobile */
     .nav-container {
-        padding: 1.1rem 20px;
+        padding: 1.2rem 20px;
     }
 
-    .kusom-nav { font-size: 1rem; }
-    .isclub-nav { font-size: 0.7rem; }
-    .logo-img { height: 36px; }
+    .kusom-nav { 
+        font-size: 1.1rem; 
+        letter-spacing: 3px;
+    }
+    
+    .isclub-nav { 
+        font-size: 0.75rem; 
+        letter-spacing: 2px;
+    }
+    
+    .logo-img { 
+        height: 40px; 
+    }
 
-    /* Show hamburger, hide desktop links */
+    /* Bigger hamburger icon */
+    .hamburger {
+        gap: 6px;
+    }
+    
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
     .hamburger { display: flex !important; }
     .nav-links { display: none !important; }
 
