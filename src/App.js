@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
+import DigitalAawaz from './pages/DigitalAawaz';
 import './App.css';
 
 // ── Splash Screen ──────────────────────────────────────────────
@@ -85,6 +86,12 @@ function App() {
                                     <motion.div initial="initial" animate="animate" exit="exit"
                                         variants={pageVariants} transition={pageTransition}>
                                         <Contact />
+                                    </motion.div>
+                                } />
+                                <Route path="/events/digital-aawaz" element={
+                                    <motion.div initial="initial" animate="animate" exit="exit"
+                                        variants={pageVariants} transition={pageTransition}>
+                                        <DigitalAawaz />
                                     </motion.div>
                                 } />
                             </Routes>

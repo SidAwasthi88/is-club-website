@@ -19,7 +19,7 @@ function Contact() {
                             
                             <div className="contact-icon">📱</div>
                             <h3>Call Us</h3>
-                            <p>+977 1234567890</p>
+                            <p>+977 981-3210593 (Coordinator)<br />+977 986-1447150 (Vice-Coordinator)</p>
                             
                             <div className="social-section">
                                 <h3>Follow Us</h3>

@@ -36,8 +36,8 @@ function About() {
                         </div>
                         <div className="leader-info">
                             <h3>Serisha Awale</h3>
-                            <p className="role">President</p>
-                            <p>Hi, I'm Serisha. As President of the IS Club, I lead our mission to bridge technology and real-world impact. I believe in empowering students to think beyond textbooks and build solutions that matter.</p>
+                            <p className="role">Coordinator</p>
+                            <p>Hi, I'm Serisha. As Coordinator of the IS Club, I lead our mission to bridge technology and real-world impact. I believe in empowering students to think beyond textbooks and build solutions that matter.</p>
                         </div>
                     </div>
 
@@ -48,8 +48,8 @@ function About() {
                         </div>
                         <div className="leader-info">
                             <h3>Luniva Rajbhandari</h3>
-                            <p className="role">Vice President</p>
-                            <p>Hi, I'm Luniva. As Vice President, I work closely with all four teams to ensure our initiatives run smoothly and our members feel supported. I'm passionate about collaboration and creating spaces where every voice is heard.</p>
+                            <p className="role">Vice Coordinator</p>
+                            <p>Hi, I'm Luniva. As Vice Coordinator, I work closely with all four teams to ensure our initiatives run smoothly and our members feel supported. I'm passionate about collaboration and creating spaces where every voice is heard.</p>
                         </div>
 
                     </div>
@@ -95,13 +95,13 @@ function About() {
                 <section className="teams-section">
                     <h2>Our Teams — 2026</h2>
 
-                    {/* Technical Team - Second */}
+                    {/* Technical Team */}
                     <div className="team-section">
                         <h3 className="team-category">💻 Technical Team</h3>
                         <p className="team-description">Website, systems & tech support</p>
                         <div className="team-members-grid">
                             <div className="member-card">
-                                <img src="/Images/siddhartha.jpg" alt="Siddhartha Raj Awasthi" className="member-photo" />
+                                <img src="/Images/siddhartha.jpeg" alt="Siddhartha Raj Awasthi" className="member-photo" style={{ objectPosition: '50% 50%' }}/>
                                 <h4>Siddhartha Raj Awasthi</h4>
                                 <p className="member-role">Lead</p>
                             </div>
@@ -128,7 +128,7 @@ function About() {
                         </div>
                     </div>
 
-                    {/* Marketing Team - First */}
+                    {/* Marketing Team */}
                     <div className="team-section">
                         <h3 className="team-category">📢 Marketing Team</h3>
                         <p className="team-description">Promotions & social media</p>
@@ -139,7 +139,7 @@ function About() {
                                 <p className="member-role">Lead</p>
                             </div>
                             <div className="member-card">
-                                <img src="/Images/sisham.jpg" alt="Sisham Ghimire" className="member-photo" />
+                                <img src="/Images/sisham.png" alt="Sisham Ghimire" className="member-photo" style={{ objectPosition: '50% 75%' }} />
                                 <h4>Sisham Ghimire</h4>
                                 <p className="member-role">Co-Lead</p>
                             </div>
@@ -160,7 +160,7 @@ function About() {
                             </div>
                         </div>
                     </div>
-                    {/* Creative Team - Third */}
+                    {/* Creative Team */}
                     <div className="team-section">
                         <h3 className="team-category">🎨 Creative Team</h3>
                         <p className="team-description">Design, graphics & visual content</p>
@@ -198,7 +198,7 @@ function About() {
                         </div>
                     </div>
 
-                    {/* Event Team - Fourth */}
+                    {/* Event Team */}
                     <div className="team-section">
                         <h3 className="team-category">🎪 Event Team</h3>
                         <p className="team-description">Planning & executing club events</p>
