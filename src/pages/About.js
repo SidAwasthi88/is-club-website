@@ -154,12 +154,13 @@ function About() {
                                 <p className="member-role">Member</p>
                             </div>
                             <div className="member-card">
-                                <img src="/Images/krisha.jpg" alt="Krisha Manandhar" className="member-photo" />
+                                <img src="/Images/krisha.jpeg" alt="Krisha Manandhar" className="member-photo" style={{ objectPosition: '60% 50%' }}/>
                                 <h4>Krisha Manandhar</h4>
                                 <p className="member-role">Member</p>
                             </div>
                         </div>
                     </div>
+
                     {/* Creative Team */}
                     <div className="team-section">
                         <h3 className="team-category">🎨 Creative Team</h3>

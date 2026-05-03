@@ -8,6 +8,17 @@ import Contact from './pages/Contact';
 import DigitalAawaz from './pages/DigitalAawaz';
 import './App.css';
 
+// ── Scroll to Top Component ────────────────────────────────────
+function ScrollToTop() {
+    const { pathname } = useLocation();
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    
+    return null;
+}
+
 // ── Splash Screen ──────────────────────────────────────────────
 function SplashScreen({ onDone }) {
     useEffect(() => {
@@ -61,6 +72,7 @@ function App() {
             {!showSplash && (
                 <div>
                     <NavBar />
+                    <ScrollToTop />  {/* ← ADD THIS LINE */}
                     <div style={{ marginTop: '0px' }}>
                         <AnimatePresence mode="wait">
                             <Routes location={location} key={location.pathname}>
